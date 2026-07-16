@@ -1,0 +1,76 @@
+.oliver-dev-logo {
+    font-family: Ubuntu;
+    filter: drop-shadow(0 0 0.2rem rgb(255, 255, 255));
+    color: rgba(25, 120, 255, 1);
+    font-weight: bolder;
+    top: 0px;
+    left: 24px;
+    -webkit-text-stroke: 2px #fff;
+}
+
+.desenvolvedor-de-software {
+    font-family: Ubuntu;
+    font-size: 20px;
+    filter: drop-shadow(0 0 0.2rem rgb(255, 255, 255));
+    color: white;
+    font-weight: bolder;
+    position: relative;
+    top: -28px;
+    left: 32px;
+    -webkit-text-stroke: .007cm #000;
+}
+
+.proxima-linha-wrapper {
+    max-height: 224px;
+    min-width: 224px;
+    background-color: rgba(0, 172, 220, .9);
+    transform: translateX(15px)
+}
+
+.proxima-linha {
+    line-height: 1;
+    height: fit-content;
+    font-size: 28px;
+    transform: scaleY(90%);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700
+}
+
+.oliver-dev-parent-wrapper {
+    background-image: linear-gradient(180deg,  rgba(43, 43, 59, .43), transparent, transparent);
+    min-width: 337px;
+}
+
+.height-0 {
+    height: 0px;
+}
+
+.nome-completo-osc {
+    font-size: 14px;
+    line-height: 32px;
+}
+
+.sob-demanda {
+    line-height: 1;
+    background-image: linear-gradient(rgba(33, 120, 210, .85), rgba(58, 180, 255, .85), rgba(33, 120, 210, .85));
+    height: 2rem;
+    width: 7.4rem;
+    font-size: 12px;
+    transform: scale(120%);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    right: -24px;
+    top: 54px;
+}
+
+.notebook {
+    height: 250px;
+    background-image: url(../img/notebook.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#sobre-mim {
+    background-color: rgba(43,43,59,.43);
+}

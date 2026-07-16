@@ -1,0 +1,46 @@
+footer a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.libutton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7px;
+    text-align: center;
+    outline: none;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    width: 150px;
+    height: 32px;
+    border-radius: 16px;
+    background-image: linear-gradient(#0A66C2, cyan, #0A66C2);
+    font-family: "SF Pro Text", Helvetica, sans-serif;
+    font-size: 14px!important;
+    line-height: 1rem !important;
+    margin: 0 !important;
+}
+footer a:not(.social-media-icon):not(.libutton):hover {
+    color: #9c006c;
+}
+/* Estilos do Rodapé */
+.site-footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 24px;
+    background-image: linear-gradient(darkslategray, #000000);
+}
+
+.site-footer .footer-logo {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 32px;
+}
+
+.site-footer .footer-text-small {
+    font-size: 9px;
+}

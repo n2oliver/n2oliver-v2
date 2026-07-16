@@ -1,0 +1,16 @@
+.gtranslate_wrapper {
+    z-index: 9999 !important;
+    color: black !important;
+    display: flex;
+    align-items: center;
+}
+
+.gt_container--hich1m .gt_switcher .gt_option,
+.gt_container--hich1m .gt_switcher .gt_selected {
+    background: transparent !important;
+}
+
+.gt_container--hich1m .gt_switcher .gt_selected a:hover,
+.gt_container--hich1m .gt_switcher .gt_option a:hover {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}

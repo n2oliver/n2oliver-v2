@@ -1,0 +1,516 @@
+/* Global Styles */
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+}
+body.oliver-dev {
+  background-image: url(../img/web-design-technology-browsing-programming-concept.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body.oliver-dev>* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(0, 0, 0, .3);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+}
+
+.navbar a,
+.navbar span {
+    color: white !important;
+    text-decoration: none;
+    padding: .3rem .4rem !important;
+    transition: color 0.3s, background-color 0.3s ease !important;
+    margin-right: 4px;
+}
+
+.navbar-brand span {
+    transform: translateX(-24px) !important;
+    padding: 0 !important;
+    position: relative;
+    left: -6px;
+    top: 0px;
+    -webkit-text-stroke: 0px #fff;
+    font-family: Ubuntu;
+    filter: drop-shadow(0 0 0.07rem rgb(255, 255, 255));
+    color: rgba(25, 120, 255, 1) !important;
+    font-weight: bolder;
+    font-size: 18px;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.navbar a:hover {
+    background-color: rgba(47, 79, 79, .1);
+    color: white !important;
+    transition: 1s;
+}
+
+.navbar .nav-c a:hover {
+    background-color: #fbff00 !important;
+    color: rgb(255, 136, 0) !important;
+}
+
+
+.navbar .nav-b a:hover {
+    background-color: blue !important;
+    color: white !important;
+}
+
+.navbar .nav-d a:hover {
+    background-color: #ff0000 !important;
+    color: white !important;
+}
+
+.navbar .nav-a a:hover {
+    background-color: #009C30 !important;
+    color: white !important;
+}
+
+.navbar .nav-e a:hover {
+    background-color: lightcyan !important;
+    color: black !important;
+}
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+.nav-item a {
+    white-space: nowrap;
+}
+/* Header Image */
+header img {
+    width: 100%;
+    height: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    justify-content: center;
+}
+
+.col-6 {
+    flex: 50%;
+    padding: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Button Styles */
+.btn-primary {
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+.btn-custom {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, .5);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 4px 40px 4px 40px;
+    margin: 12px;
+    font-weight: 700;
+}
+
+.btn-custom:hover {
+    background-color: blue;
+}
+
+/* Title Styles */
+/* Title Styles */
+.title {
+    position: absolute;
+    /* Posicionamento absoluto para sobrepor a imagem */
+    bottom: 10%;
+    /* Posiciona o título verticalmente no centro */
+    transform: translate(-50%, -50%);
+    /* Centraliza o título perfeitamente */
+    width: fit-content;
+    /* Faz o título ocupar toda a largura do contêiner */
+    color: white;
+    text-align: center;
+    /* Centraliza o texto no título */
+    display: flex;
+    align-self: center;
+    word-wrap: break-word;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* Garante que o título fique sobre a imagem */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.title-image {
+    width: 100%;
+    height: auto;
+    /* Faz a imagem preencher toda a altura da região */
+    object-fit: contain;
+    /* Garante que a imagem cubra toda a área sem distorção */
+    border-radius: 12px;
+}
+
+/* Arrow Styles */
+.arrow-container {
+    display: inline-block;
+}
+
+.arrow {
+    width: 50px;
+    height: 50px;
+    fill: #fff;
+    stroke-width: 2px;
+    opacity: .75;
+}
+
+.arrow:not(.back-arrow) {
+    stroke: #9c006c;
+}
+
+.back-arrow {
+    stroke: slategray;
+    transform: rotate(180deg);
+}
+
+/* Carousel Controls */
+.carousel {
+    height: fit-content;
+}
+
+.carousel-control-prev {
+    background: #9c006c;
+}
+
+.carousel-control-next {
+    background: #fff;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: fixed;
+    height: fit-content;
+    width: fit-content;
+    padding: 34px;
+    margin: auto;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover{
+    opacity: 1;
+}
+
+.carousel-control-prev:hover {
+    background: #9c006c;
+    color: white;
+}
+
+.carousel-control-next:hover {
+    background: white;
+}
+
+.carousel-inner {
+    height: fit-content;
+    align-items: center;
+}
+
+.carousel-item {
+    position: relative;
+    /* Para garantir que o título e a imagem sejam posicionados corretamente */
+    height: fit-content;
+    /* Garante que o item do carrossel ocupe toda a altura do contêiner */
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.carousel-item.active .title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-item-content {
+    max-height: 50vh;
+    justify-content: space-around;
+    display: flex;
+}
+
+.row {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.about-me::-webkit-scrollbar {
+    display: none;
+}
+
+.about-me {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.about-me div {
+    max-width: 100% !important;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    min-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    word-wrap: anywhere;
+    flex-wrap: wrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.oliver-dev p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    overflow-x: scroll;
+    height: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.icon-box::-webkit-scrollbar {
+    display: none;
+}
+
+.icon-item {
+    float: left;
+    text-align: center;
+    margin: 4px;
+    background-color: white;
+    padding: 14px;
+    width: 180px;
+    height: 160px;
+    border: solid 2px #ccc;
+    transition: 1s;
+}
+
+.icon-item:hover,
+.icon-item.hover {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: 100vw;
+    transition: 1s;
+    transform: translateY(-1vw);
+    flex-direction: column;
+}
+
+.icon-item:hover i,
+.icon-item.hover i {
+    width: 5em;
+}
+
+.icon-item:hover span,
+.icon-item.hover span {
+    padding: 14px;
+    text-align: center;
+}
+
+.icon-item .tooltip {
+    display: none;
+}
+
+.icon-item.hover .tooltip,
+.icon-item:hover .tooltip {
+    display: contents;
+}
+
+.icon-item i {
+    font-size: 48px;
+    color: #009C30;
+}
+
+.icon-item span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.text-box {
+    overflow-y: scroll;
+}
+
+.carousel-indicators button {
+    background-color: #9c006c;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 5px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+}
+
+.quicksand {
+    font-size: .9em;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+.noticia-card {
+    background: darkslategray;
+}
+.noticia-card:hover {
+    background: darkgreen;
+}
+.frame {
+    position: sticky !important;
+    bottom: 0 !important;
+    left: 0 !important;
+}
+#recentes {
+    overflow-y: auto;
+    z-index: 9;
+}
+#recentes, #noticia {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}   
+#recentes::-webkit-scrollbar, #noticia::-webkit-scrollbar {
+    display: none;
+}
+.recentes-imagem {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+#preview {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 44px;
+}
+#preview div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: clip;
+}
+#imagem {
+    position: relative;
+    bottom: 100vh;
+    background-size: 100% auto;
+    background-position: center;
+    border-radius: 12px;
+    margin-right: 12px;
+    background-repeat: no-repeat;
+}
+#imagem-background {
+    position: relative;
+    top: 0px;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    margin-right: 12px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    color: light-dark(black, white);
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .col-6 {
+        flex: 100%;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .arrow {
+        opacity: .80;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        opacity: .8;
+        transform: scale(1.05);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        background: transparent;
+        align-content: center;
+        display: flex;
+        align-self: center;
+        height: fit-content;
+        width: fit-content;
+        padding: 34px;
+        margin: auto;
+    }
+
+    .icon-item:hover i,
+    .icon-item.hover i {
+        width: 50vw;
+    }
+    #imagem-background {
+        height: 50vh !important;
+    }
+    #imagem {
+        top: -50vh !important;
+    }
+}
