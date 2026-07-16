@@ -8,6 +8,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   backdrop-filter: brightness(0.5);
+  color: white;
 }
 
 header {

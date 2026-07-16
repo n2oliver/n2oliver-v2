@@ -5,13 +5,13 @@ import '../components/gtranlate-settings.js';
 
 function Footer() {
     return (
-  <footer class="site-footer mt-2 m-auto">
-    <a href="/"><span class="oliver-dev-logo footer-logo">n2oliver</span></a>
-    <div class="d-flex justify-content-center">
+  <footer className="site-footer mt-2 m-auto">
+    <a href="/"><span className="oliver-dev-logo footer-logo">n2oliver</span></a>
+    <div className="d-flex justify-content-center">
       <SocialMedia />
     </div>
     
-    <span class="footer-text-small">
+    <span className="footer-text-small">
       Todos os direitos reservados - n2oliver - 2025
     </span>
 
