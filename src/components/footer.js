@@ -1,7 +1,7 @@
 import '../css/footer.css';
 import '../css/gtranslate.css';
 import SocialMedia from './social-media.js';
-import '../components/gtranlate-settings.js';
+import '../js/gtranlate-settings.js';
 
 function Footer() {
     return (

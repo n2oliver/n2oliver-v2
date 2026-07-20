@@ -4,11 +4,9 @@ import { Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './App.css';
-import './css/home.css';
 import './css/games.css';
 import './css/header.css';
 
-import 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 import Navbar from './components/navbar.js';
@@ -26,7 +24,6 @@ import Desenvolvedor from "./pages/Desenvolvedor";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 
-
 function App() {
   return (
     <div className="App">
@@ -42,7 +39,6 @@ function App() {
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/desenvolvedor" element={<Desenvolvedor />} />
         <Route path="/contato" element={<Contato />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

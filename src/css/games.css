@@ -1,166 +1,214 @@
+.container {
+  display: grid;
+  gap: .2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background-color: transparent;
+}
 
+.row>*.game-card {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
 
-    .container {
-      display: grid;
-      gap: .2rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      background-color: transparent;
-    }
-    .row>*.game-card {
-      padding-right: 0 !important;
-      padding-left: 0 !important;
-    }
-    .game-card {
-      text-align: center;
-      overflow: visible;
-      width: 200px;
-      margin: 4px;
-    }
+#game-details-panel {
+  background: rgba(0, 0, 0, .8);
+}
 
-    .game-card div {
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
+#games {
+  background-color: rgba(0, 0, 0, .4);
+}
 
-    .game-card h2 {
-      margin: 0.5rem 0;
-      font-family: 'Ubuntu';
-      color: white;
-      text-shadow: 3px 3px 3px darkslategray;
-      font-size: 18px;
-    }
+.game-card {
+  text-align: center;
+  overflow: visible;
+  width: 200px;
+  margin: 4px;
+}
 
-    .game-card a {
-      text-decoration: none;
-      font-family: 'Ubuntu';
-    }
+.game-card div {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
-    .game-card .link {
-      text-align: center;
-      background-color: #E70D65;
-      font-weight: 700;
-      color: #FFFFFF
-    }
+.game-card h2 {
+  margin: 0.5rem 0;
+  font-family: 'Ubuntu';
+  color: white;
+  text-shadow: 3px 3px 3px darkslategray;
+  font-size: 18px;
+}
 
-    .game-card .link:hover {
-      background-color: #F11E52;
-    }
+.game-card button {
+  text-decoration: none;
+  font-family: 'Ubuntu';
+  width: 194px;
+}
 
-    .game-card a div {
-      align-items: start;
-      height: auto;
-      background-position: center !important;
-      border-radius: 10px;
-    }
+.game-card .link {
+  text-align: center;
+  background-color: #E70D65;
+  font-weight: 700;
+  color: #FFFFFF
+}
 
-    .game-card a div span {
-      background-color: rgba(0.0, 0, 0, 0.5);
-      background-position: top;
-      color: white;
-      font-weight: bold;
-    }
+.game-card .link:hover {
+  background-color: #F11E52;
+}
 
-    .intr-in {
-      top: 60px !important;
-    }
+.game-card button div {
+  align-items: start;
+  height: auto;
+  background-position: center !important;
+  border-radius: 10px;
+}
 
-    .donation-section {
-      background-color: #e9ecef;
-      border: 1px solid #dee2e6;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 2rem;
-      text-align: center;
-      color: #343a40;
-      overflow: hidden;
-      height: auto;
-    }
-    .success {
-      background: linear-gradient(135deg, #54a554, #77f554);
-    }
+.game-card button div span {
+  background-color: rgba(0.0, 0, 0, 0.5);
+  background-position: top;
+  color: white;
+  font-weight: bold;
+}
 
-    .welcome-text-box {
-      background: white;
-      padding: 1rem;
-      border-radius: 14px;
-    }
+.intr-in {
+  top: 60px !important;
+}
 
-    #adsterra-banner>div {
-      background: rgba(255, 255, 255, .8);
-      backdrop-filter: blur(1px);
-    }
+.donation-section {
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 2rem;
+  text-align: center;
+  color: #343a40;
+  overflow: hidden;
+  height: auto;
+}
 
-    main {
-      gap: 0 !important;
-      align-items: stretch;
-      padding: 0;
-    }
+.success {
+  background: linear-gradient(135deg, #54a554, #77f554);
+}
 
-    #destaque-imagem {
-      color: #000;
-      text-align: center;
-      height: fit-content;
-      backdrop-filter: brightness(0.4);
-    }
+.welcome-text-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 14px;
+}
 
-    #destaque-imagem .container {
-      max-width: 100%;
-    }
+#adsterra-banner>div {
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(1px);
+}
 
-    #progressbar {
-      background: #fff;
-      height: .4rem;
-      width: 100%;
-      border-bottom-left-radius: 0.375rem;
-      border-bottom-right-radius: 0.375rem;
-    }
+main {
+  gap: 0 !important;
+  align-items: stretch;
+  padding: 0;
+}
 
-    .ui-progressbar-value {
-      background: deeppink;
-      height: .4rem;
-    }
+#destaque-imagem {
+  color: #000;
+  text-align: center;
+  height: fit-content;
+  backdrop-filter: brightness(0.4);
+}
 
-    #game-details {
-      transition: 1s ease;
-      width: auto;
-    }
+#destaque-imagem .container {
+  max-width: 100%;
+}
 
-    .adsbygoogle {
-      min-width: 250px !important;
-    }
+#progressbar {
+  background: #fff;
+  height: .4rem;
+  width: 100%;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
 
-    #ads>div>iframe,
-    #atContainer-b5463c03cd36f2b207d3e311906ba716 {
-      width: fit-content !important;
-    }
+.ui-progressbar-value {
+  background: deeppink;
+  height: .4rem;
+}
 
-    #game-details-content,
-    #game-details-title {
-      cursor: pointer
-    }
+#game-details {
+  transition: 1s ease;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  font-family: Ubuntu;
+  color: white !important;
+}
 
-    #thumbnail h2 {
-      margin-bottom: 0;
-    }
-    #game-noticias {
-      display: -webkit-box;
-      overflow-x: auto;
-      scrollbar-width: auto !important;
-    }
-    #game-noticias .card {
-      color: white;
-      width: 150px;
-      height: fit-content;
-      background-color: darkslategray;
-    }
-    
-    #game-noticias .card .img {
-      width: 100%;
-      height: 150px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: black;
-    }
-    #lista, #destaques {
-      display: -webkit-box;
-      overflow-x: auto;
-    }
+.adsbygoogle {
+  min-width: 250px !important;
+}
+
+#ads>div>iframe,
+#atContainer-b5463c03cd36f2b207d3e311906ba716 {
+  width: fit-content !important;
+}
+
+#game-details-content,
+#game-details-title {
+  cursor: pointer
+}
+
+#thumbnail {
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../img/joined-games.png);
+  width: 100vw;
+  height: 77vh
+}
+
+#thumbnail h2 {
+  margin-bottom: 0;
+}
+
+#thumbnail button {
+  height: fit-content;
+}
+
+#game-noticias {
+  display: -webkit-box;
+  overflow-x: auto;
+  scrollbar-width: auto !important;
+}
+
+#game-noticias .card {
+  color: white;
+  width: 150px;
+  height: fit-content;
+  background-color: darkslategray;
+}
+
+#game-noticias .card .img {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+#lista,
+#destaques {
+  display: -webkit-box;
+  overflow-x: auto;
+}
+
+.buttons {
+  transform: translateY(175px);
+  pointer-events: none
+}
+
+.buttons button {
+  height: fit-content;
+  pointer-events: auto
+}
+
+#international-account {
+  list-style-type: none;
+  padding-left: 0;
+}

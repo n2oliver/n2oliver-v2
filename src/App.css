@@ -1,16 +1,14 @@
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0 !important;
-  background: #343a40;
-  overflow: auto;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  backdrop-filter: brightness(0.5);
-  color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0 !important;
+    background: #343a40;
+    overflow: auto;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    backdrop-filter: brightness(0.5);
 }
-
 header {
   text-align: center;
   padding: .2rem;
@@ -113,10 +111,6 @@ main {
   cursor: pointer
 }
 
-#thumbnail h2 {
-  margin-bottom: 0;
-}
-
 #game-noticias {
   display: -webkit-box;
   overflow-x: auto;
@@ -142,4 +136,7 @@ main {
 #destaques {
   display: -webkit-box;
   overflow-x: auto;
+}
+.ubuntu {
+  font-family: 'Ubuntu';
 }
