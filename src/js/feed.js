@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
             gameDiv.className = 'row min-vh-50 h-100 align-content-center';
             gameSubDiv.style.height = '150px';
             gameSubDiv.className = 'bg-dark border border-light';
-            gameSubDiv.style.background = `url(${game.imagem})`;
+            gameSubDiv.style.background = `url(${API_URL}/src${game.imagem})`;
             gameSubDiv.style.backgroundSize = `cover`;
             gameDiv.appendChild(gameSubDiv);
 
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
             destaqueLink.setAttribute('data-game-url', destaque.url);
             destaqueLink.setAttribute('data-game-title', destaque.titulo);
             destaqueLink.setAttribute('data-game-desc', destaque.descricao);
-            destaqueLink.setAttribute('data-game-imagem', destaque.imagem);
+            destaqueLink.setAttribute('data-game-imagem', `${API_URL}/src${destaque.imagem}`);
 
             const destaqueDiv = document.createElement('div');
             const destaqueSubDiv = document.createElement('div');
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
             destaqueDiv.className = 'row min-vh-50 h-100 align-content-center';
             destaqueSubDiv.style.height = '150px';
             destaqueSubDiv.className = 'bg-dark border border-light';
-            destaqueSubDiv.style.background = `url(${destaque.imagem})`;
+            destaqueSubDiv.style.background = `url(${API_URL}/src${destaque.imagem})`;
             destaqueSubDiv.style.backgroundSize = `cover`;
 
             const destaqueTitle = document.createElement('h2');
