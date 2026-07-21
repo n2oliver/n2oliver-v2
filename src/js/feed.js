@@ -1,7 +1,8 @@
 import { $ } from 'jquery';
+const API_URL = process.env.REACT_APP_API_URL;
 
 (function () {
-    const serverResponse = $.post('../api/noticias/buscar-noticias.php', { page: 1, offset: 0, limit: 15 }, function (response) {
+    const serverResponse = $.post(API_URL+'/api/noticias/buscar-noticias.php', { page: 1, offset: 0, limit: 15 }, function (response) {
         if (serverResponse.status === 200) {
             const data = JSON.parse(response);
             for (let item of data.results) {
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     let gameItems = [];
-    fetch('../api/jogos/obter.php').then(async response => {
+    fetch(API_URL+'/api/jogos/obter.php').then(async response => {
         const data = await response.json();
         const recentesContainer = document.getElementById('jogos-recentes').querySelector('#lista');
 
@@ -227,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 30000);
         })();
     });
-    fetch('../api/jogos/obter-destaques.php').then(async response => {
+    fetch(API_URL+'/api/jogos/obter-destaques.php').then(async response => {
         const data = await response.json();
         let destaqueItems = [];
         const container = document.getElementById('destaques');
