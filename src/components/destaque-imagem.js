@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { scrollDivX } from '../js/scroll-buttons.js';
 import RecentesCards from './recentes-cards.js';
 import DestaquesCards from './destaques-cards.js';

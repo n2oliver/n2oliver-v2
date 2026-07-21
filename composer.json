@@ -1,0 +1,19 @@
+{
+    "require": {
+        "sentry/sentry": "^3.22",
+        "symfony/http-client": "^5.4",
+        "nyholm/psr7": "^1.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8000"
+    },
+    "require-dev": {
+        "pestphp/pest-plugin-browser": "^4.3"
+    }
+}

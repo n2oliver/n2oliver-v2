@@ -18,7 +18,7 @@ function NoticiasCards() {
     }, []);
     return noticias && noticias.results && (noticias.results.map((noticia, index) => (
             <div className="card" key={noticia.id} onClick={irParaNoticia} noticia-id={noticia.id}>
-              <div className="img" style={{backgroundImage: `url(${API_URL}${'/src'}${noticia.imagem})`}}></div>
+              <div className="img" style={{backgroundImage: `url(${API_URL}/src${noticia.imagem})`}}></div>
               <strong>{noticia.titulo}</strong>
             </div>
         )));
