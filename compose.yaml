@@ -41,3 +41,9 @@ services:
     stdin_open: true
     tty: true
     restart: unless-stopped
+    develop:
+      watch:
+        - path: . # Path to monitor for changes
+          action: rebuild # Action to take: rebuild the image and recreate the container
+        - path: ./package.json # Example for specific file requiring rebuild
+          action: rebuild
