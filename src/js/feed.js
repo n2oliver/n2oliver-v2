@@ -1,4 +1,6 @@
-import { $ } from 'jquery';
+import $ from "jquery";
+import "jquery-ui/ui/widgets/progressbar";
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 (function () {
@@ -6,9 +8,8 @@ const API_URL = process.env.REACT_APP_API_URL;
         if (serverResponse.status === 200) {
             const data = JSON.parse(response);
             for (let item of data.results) {
-                $("#game-noticias").append($(`
-            <div className="card" onclick="window.location.href = '/noticias.php?id=${item.id}'">
-                <div className="img" style="background-image: url(${item.imagem})"></div>
+                $("#game-noticias").append($(`<div className="card" onclick="window.location.href = '/noticias.php?id=${item.id}'">
+                <div className="img" style="background-image: url(${API_URL}/src${item.imagem})"></div>
                 <strong>${item.titulo}</strong>
             </div>`))
             }
@@ -25,8 +26,8 @@ function scroll(element) {
 function showGameInHighlight(game) {
     let destaqueImagem = document.querySelector("body");
     let thumbnail = document.getElementById("thumbnail");
-    destaqueImagem.style.backgroundImage = 'url(' + game.imagem + ')';
-    thumbnail.style.backgroundImage = 'url(' + game.imagem + ')';
+    destaqueImagem.style.backgroundImage = 'url(' + API_URL + '/src' + game.imagem + ')';
+    thumbnail.style.backgroundImage = 'url(' + API_URL + '/src' + game.imagem + ')';
 
     $('#game-details-content,#game-details-title,#play-button,#click-to-action').unbind('click').click(function (e) {
         e.preventDefault();
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             gameLink.setAttribute('data-game-url', game.url);
             gameLink.setAttribute('data-game-title', game.titulo);
             gameLink.setAttribute('data-game-desc', game.descricao);
-            gameLink.setAttribute('data-game-imagem', game.imagem);
+            gameLink.setAttribute('data-game-imagem',  API_URL + '/src' + game.imagem);
 
             const gameDiv = document.createElement('div');
 
