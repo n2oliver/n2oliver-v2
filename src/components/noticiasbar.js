@@ -4,7 +4,8 @@ import GameNoticias from './game-noticias.js';
 
 function NoticiasBar() {
     return (
-        <div className="d-flex justify-content-start row col-md-10 m-auto text-light mt-2 ubuntu">
+        <div className="d-flex justify-content-start row col-md-10 m-auto text-light mt-2 ubuntu rounded pb-4" 
+            style={{ background: "rgba(0,0,0,.6)" }}>
 
             <div className="d-flex w-100 justify-content-between buttons">
                 <button className="btn btn-lg btn-success m-1 h-0 rounded-circle" id="prev" aria-label="Aria Left"

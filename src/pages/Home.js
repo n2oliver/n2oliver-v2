@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/home.css';
-import '../css/games.css';
 import NoticiasBar from '../components/noticiasbar.js';
 import DestaqueImagem from '../components/destaque-imagem.js';
 import VerTodasAsNoticias from '../components/ver-todas-as-noticias.js';

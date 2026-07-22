@@ -2,11 +2,11 @@ FROM node:22
 
 WORKDIR /
 
-COPY package*.json ./src/
+COPY package*.json ./var/www/html/
+COPY ./src/ /var/www/html/src/
+COPY ./public/ /var/www/html/public/
 
-RUN cd src && npm install
-
-COPY . .
+RUN cd ./var/www/html/ && npm install
 
 EXPOSE 3000
 

@@ -180,7 +180,7 @@ main {
 #game-noticias .card {
   color: white;
   width: 150px;
-  height: fit-content;
+  height: 150px;
   background-color: darkslategray;
 }
 

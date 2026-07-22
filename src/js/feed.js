@@ -3,19 +3,6 @@ import "jquery-ui/ui/widgets/progressbar";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-(function () {
-    const serverResponse = $.post(API_URL+'/api/noticias/buscar-noticias.php', { page: 1, offset: 0, limit: 15 }, function (response) {
-        if (serverResponse.status === 200) {
-            const data = JSON.parse(response);
-            for (let item of data.results) {
-                $("#game-noticias").append($(`<div className="card" onclick="window.location.href = '/noticias.php?id=${item.id}'">
-                <div className="img" style="background-image: url(${API_URL}/src${item.imagem})"></div>
-                <strong>${item.titulo}</strong>
-            </div>`))
-            }
-        }
-    })
-})()
 function scroll(element) {
     element.scrollIntoView({
         behavior: "smooth",
@@ -61,8 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const gameCard = document.createElement('div');
             gameCard.className = 'game-card';
 
-            const gameLink = document.createElement('a');
-            gameLink.href = '#';
+            const gameLink = document.createElement('button');
             gameLink.setAttribute('data-game-url', game.url);
             gameLink.setAttribute('data-game-title', game.titulo);
             gameLink.setAttribute('data-game-desc', game.descricao);
@@ -104,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Encontra o índice do primeiro jogo a ser exibido
         let gamecard = gamecards[0];
         let gameItemsIndex = -1;
-        const gameLink = gamecard.querySelector('a');
+        const gameLink = gamecard.querySelector('button');
         document.getElementById('game-details-title').textContent = gameLink.dataset.gameTitle;
         document.getElementById('game-details-content').innerHTML = gameLink.dataset.gameDesc;
 
@@ -229,56 +215,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 30000);
         })();
     });
-    fetch(API_URL+'/api/jogos/obter-destaques.php').then(async response => {
-        const data = await response.json();
-        let destaqueItems = [];
-        const container = document.getElementById('destaques');
-
-        data.forEach(destaque => {
-            const card = document.createElement('div');
-            card.className = 'game-card';
-
-            const destaqueLink = document.createElement('a');
-            destaqueLink.href = '#';
-            destaqueLink.setAttribute('data-game-url', destaque.url);
-            destaqueLink.setAttribute('data-game-title', destaque.titulo);
-            destaqueLink.setAttribute('data-game-desc', destaque.descricao);
-            destaqueLink.setAttribute('data-game-imagem', `${API_URL}/src${destaque.imagem}`);
-
-            const destaqueDiv = document.createElement('div');
-            const destaqueSubDiv = document.createElement('div');
-
-            destaqueDiv.className = 'row min-vh-50 h-100 align-content-center';
-            destaqueSubDiv.style.height = '150px';
-            destaqueSubDiv.className = 'bg-dark border border-light';
-            destaqueSubDiv.style.background = `url(${API_URL}/src${destaque.imagem})`;
-            destaqueSubDiv.style.backgroundSize = `cover`;
-
-            const destaqueTitle = document.createElement('h2');
-            destaqueTitle.className = 'rounded-left bg-dark my-0 py-1 rounded';
-            destaqueTitle.textContent = destaque.titulo;
-
-            destaqueLink.onclick = function () {
-                setTimeout(() => {
-                    window.location.href = destaque.url;
-                }, 200);
-            };
-            destaqueItems.push(destaque);
-
-            const destaqueDesc = document.createElement('p');
-            destaqueDesc.innerHTML = destaque.descricao;
-
-            const playButton = document.createElement('div');
-            playButton.className = 'link btn my-2';
-            playButton.textContent = 'Acessar';
-
-            destaqueDiv.appendChild(destaqueTitle);
-            destaqueLink.appendChild(destaqueDiv);
-            destaqueDiv.appendChild(destaqueSubDiv);
-            card.appendChild(destaqueLink);
-            container.appendChild(card);
-        });
-    })
 });
 
 export { scroll, showGameInHighlight }

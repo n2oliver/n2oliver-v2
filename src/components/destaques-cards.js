@@ -20,7 +20,7 @@ function DestaquesCards() {
     return (
         destaques.map((destaque, index) => (
             <div className="game-card" key={ index }>
-                <button href="#"
+                <button
                     data-game-url={ destaque.url }
                     data-game-title={ destaque.titulo }
                     data-game-desc={ destaque.descricao }

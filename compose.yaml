@@ -3,10 +3,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.php
+    container_name: php-api
     ports:
       - 8000:80
     volumes:
-      - ./:/var/www/html/
+      - ./api:/var/www/html/api
+      - ./src:/var/www/html/src
     env_file:
       - .env.development
     extra_hosts:
@@ -16,12 +18,14 @@ services:
       context: .
       dockerfile: Dockerfile.react
     container_name: n2oliver-react
-    working_dir: /src
+    working_dir: /var/www/html/
     ports:
       - "3000:3000"
     volumes:
-      - ./:/src
-      - /src/node_modules
+      - ./src:/var/www/html/src/
+      - ./package.json:/var/www/html/src/package.json
+      - ./public:/var/www/html/src/public
+      - /var/www/html/src/node_modules
     env_file:
       - .env.development
     depends_on:
@@ -29,9 +33,3 @@ services:
     stdin_open: true
     tty: true
     restart: unless-stopped
-    develop:
-      watch:
-        - path: . # Path to monitor for changes
-          action: rebuild # Action to take: rebuild the image and recreate the container
-        - path: ./package.json # Example for specific file requiring rebuild
-          action: rebuild

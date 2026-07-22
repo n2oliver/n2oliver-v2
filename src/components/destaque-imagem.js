@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { scrollDivX } from '../js/scroll-buttons.js';
 import RecentesCards from './recentes-cards.js';
 import DestaquesCards from './destaques-cards.js';
@@ -10,7 +9,7 @@ function DestaqueImagem() {
             <div id="games" className="container m-auto p-0">
                 <div id="game-details" className="flex-row px-0 col-md-10">
                     <div className="w-100">
-                        <div id="thumbnail" className="rounded align-content-end border border-light">
+                        <div id="thumbnail" className="w-100 rounded align-content-end border border-light">
                             <div id="click-to-action"></div>
                             <h2><strong><span id="game-details-title">n2oliver</span></strong>🎮</h2>
                             <div id="game-details-panel" className="d-flex justify-content-around">
@@ -34,7 +33,7 @@ function DestaqueImagem() {
                         </div>
                         <div id="progressbar" role="progressbar" title="progressbar"></div>
 
-                        <div className="row justify-content-around">
+                        <div className="w-100 row justify-content-around">
                             <div id="jogos-recentes" className="d-flex justify-content-center col-md-5">
                                 <div className="w-100 ubuntu">
                                     <div className="d-flex w-100 justify-content-between buttons" id="buttons">
@@ -66,7 +65,7 @@ function DestaqueImagem() {
                                             <i className="fa-solid fa-arrow-right"></i>
                                         </button>
                                     </div>
-                                    <strong><h2 className="my-0">Você também pode gostar de</h2></strong>
+                                    <strong><h2 className="my-0">Seções</h2></strong>
                                 </div>
 
                                 <div id="destaques" className="my-0 py-0">

@@ -22,7 +22,7 @@ function RecentesCards() {
     return (
         recentes.map((recente, index) => (
             <div className="game-card" key={index} >
-                <button href="#"
+                <button
                     data-game-url={recente.url}
                     data-game-title={recente.titulo}
                     data-game-desc={recente.descricao}
