@@ -13,6 +13,12 @@ services:
       - .env.development
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    develop:
+      watch:
+        - path: ./api
+          target: /var/www/html/api
+          action: sync+restart
+
   frontend:
     build:
       context: .
@@ -22,7 +28,6 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./src:/var/www/html/src/
       - ./package.json:/var/www/html/src/package.json
       - ./public:/var/www/html/src/public
       - /var/www/html/src/node_modules
@@ -33,3 +38,8 @@ services:
     stdin_open: true
     tty: true
     restart: unless-stopped
+    develop:
+      watch:
+        - path: ./src
+          target: /var/www/html/src
+          action: sync+restart

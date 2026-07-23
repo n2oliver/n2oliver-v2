@@ -1,8 +1,18 @@
 <?php
+
 if(empty($pdo)) {
-    include_once('load-env.php');
-    include_once('database/connectdb.php');
+    include_once(__DIR__.'/../database/connectdb.php');
 }
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: " . getenv('REACT_APP_URL'));
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
 try {
     $where = "";
     

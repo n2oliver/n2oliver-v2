@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 
-const API_URL = process.env.REACT_APP_API_URL;
 
 function NoticiasCards() {
+    const API_URL = process.env.REACT_APP_API_URL;
+
     const [noticias, setNoticias] = useState([]);
+
     function irParaNoticia(event) {
-        window.location.href = `/noticias/${event.target.closest('.card').attributes['noticia-id'].value}`
+        window.location.href = `/noticias/${event.target.closest('.card').attributes['data-noticia-id'].value}`
     }
     useEffect(() => {
         async function carregar() {
