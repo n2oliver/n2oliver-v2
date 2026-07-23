@@ -4,10 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './App.css';
+import './css/styles-index.css';
 import './css/games.css';
 import './css/header.css';
 
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { abrirSmartlinkUmaVez } from "./js/anuncios";
 
 import Navbar from './components/navbar.js';
 import Header from './components/header.js';
@@ -45,5 +47,13 @@ function App() {
     </div>
   );
 }
+document.addEventListener('DOMContentLoaded', function () {
+    window.onclick = () => {
+        window.onclick = () => {
+            abrirSmartlinkUmaVez();
+            window.onclick = null;
+        }
+    }
+});
 
 export default App;

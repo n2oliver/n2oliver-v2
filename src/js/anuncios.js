@@ -1,3 +1,4 @@
+import { gtag } from "./gtag"
 const SMARTLINK_1 = 'https://laxativethem.com/ffga4c7z4?key=9b0193dfd0a136a88071da78968c41eb';
 const SMARTLINK_2 = 'https://omg10.com/4/10285691';
 const SMARTLINK_3 = 'https://directads.adclickppc.com/dl/?16925b62-e818-4353-8bb6-0fe491d50746';

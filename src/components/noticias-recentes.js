@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import $ from "jquery";
-import { render } from "@testing-library/react";
+import { createRoot } from "react-dom/client";
+let noticiasRoot = null;
 
 let pagina = 0;
 const API_URL = process.env.REACT_APP_API_URL;
@@ -104,7 +105,7 @@ function voltar(event) {
     pagina = pagina > 1 ? pagina - 1 : 1;
     buscarNoticias(event);
 }
-function buscarNoticias(event) {
+async function buscarNoticias(event) {
     const component = $(event.target);
     const temNumero = Boolean(component.text());
     pagina = temNumero ? component.text() :
@@ -113,88 +114,54 @@ function buscarNoticias(event) {
         .removeClass('disabled')
         .prop('disabled', false);
 
-    $.ajax({
-        url: `${API_URL}/api/noticias/obter.php`,
-        type: 'POST',
-        data: { page: pagina },
-        success: (data) => {
-            if (temNumero) {
-                component.addClass('disabled');
-                component.prop('disabled', true);
-            }
+    const response = await fetch(`${API_URL}/api/noticias/obter.php`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ page: pagina })
+        });
+    const dados = await response.json();
+    if (dados.page) pagina = dados.page;
 
-            $('#noticias').html('');
-            const obj = data;
-            if (obj) {
-                if (pagina > obj.pages) {
-                    pagina = pagina - 1;
-                }
+    const container = document.getElementById("noticias");
 
-                if (pagina < 1) {
-                    pagina = pagina + 1;
-                }
+    if (!noticiasRoot) {
+        noticiasRoot = createRoot(container);
+    }
+    noticiasRoot.render(
+        <>
+            {dados.results.map((noticia) => (
+                <div key={noticia.id} className="border rounded shadow-sm mb-1 ms-1 bg-light" style={{ width: "100%", cursor: "pointer" }} onClick={(event) => toggleNoticiaContent(event, noticia.id)}>
+                    <div className="p-2 noticia-card">
+                        <div className="item d-flex align-items-center gap-2">
+                            {noticia.imagem && (
+                                <div
+                                    className="recentes-imagem"
+                                    style={{ backgroundImage: `url(${API_URL}/src${noticia.imagem})` }}
+                                />
+                            )}
 
-                const container = document.getElementById('noticias');
-
-                if (container) {
-                    // 3. Crie a raiz e renderize o componente
-                    const root = render(
-                        obj.results.map((noticia) => {
-                            const dataPublicacao = noticia.data_publicacao; // ex: "2025-10-08 14:30:00"
-                            const data = new Date(dataPublicacao);
-
-                            const dataFormatada = data.toLocaleString('pt-BR', {
-                                day: '2-digit',
-                                month: '2-digit',
-                                year: 'numeric',
-                                hour: '2-digit',
-                                minute: '2-digit',
-                                hour12: false
-                            });
-
-                            return
-                            <div id="noticia-card-parent-{noticia.id}" className="border rounded shadow-sm mb-1 ms-1 bg-light" style={{ width: "100%", cursor: "pointer" }} onClick={(event, noticia) => toggleNoticiaContent(event, noticia.id)}>
-                                <div className="p-2 noticia-card">
-                                    <div className="item d-flex align-items-center gap-2">
-                                        {noticia.imagem.length != 0 ? <div className="recentes-imagem" style={{ backgroundImage: `url(${API_URL}/src${noticia.imagem})` }}></div> : ''}
-                                        <div className="d-flex flex-column">
-                                            <div className="mb-1 text-light" style={{ cursor: "pointer" }} onClick={(event, noticias) => toggleNoticiaContent(event, noticia.id)}>
-                                                {noticia.titulo}
-                                            </div>
-
-                                            <small className="text-light">
-                                                Publicado em ${dataFormatada}
-                                                por ${noticia.autor}
-                                                ${(noticia.categoria.length != 0) ?
-                                                    `— <em>${noticia.categoria}</em>` : ''}
-
-                                            </small>
-                                        </div>
-                                    </div>
+                            <div className="d-flex flex-column">
+                                <div
+                                    className="mb-1 text-light"
+                                    onClick={(event) => toggleNoticiaContent(event, noticia.id)}
+                                >
+                                    {noticia.titulo}
                                 </div>
-                            </div>;
 
-                            $(`#noticia-card-parent-${noticia.id}`).unbind('click').click((event) => {
-                                let obj = { ...noticia };
-                                setTimeout(() => {
-                                    toggleNoticiaContent(event, obj.id);
-                                    console.log(obj);
-                                }, 200);
-                            });
-
-                        })
-                    );
-                }
-                if (event.target) {
-                    document.getElementById('noticias').scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-
-        },
-        error: function () {
-            alert('Erro ao carregar as notícias.');
-        }
-    });
+                                <small className="text-light">
+                                    Publicado em {noticia.data_publicacao} por {noticia.autor}
+                                    {noticia.categoria && <> — <em>{noticia.categoria}</em></>}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))
+            }</>
+        );
 }
 export default NoticiasRecentes;
 export { voltar, avancar }
