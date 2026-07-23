@@ -41,6 +41,8 @@
   text-decoration: none;
   font-family: 'Ubuntu';
   width: 194px;
+  background: transparent;
+  border: none;
 }
 
 .game-card .link {
@@ -174,6 +176,7 @@ main {
 #game-noticias {
   display: -webkit-box;
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: auto !important;
 }
 
@@ -196,6 +199,7 @@ main {
 #destaques {
   display: -webkit-box;
   overflow-x: auto;
+  flex-wrap: wrap;
 }
 
 .buttons {

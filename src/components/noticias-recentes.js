@@ -39,8 +39,8 @@ function NoticiasRecentes() {
                 <div className="item d-flex align-items-center gap-2">
                     {noticia.imagem ? <div className="recentes-imagem" style={{ backgroundImage: `url(${API_URL}/src${noticia.imagem})` }}></div> : ''}
                     <div className="d-flex flex-column">
-                        <div className="mb-1 text-light" style={{ cursor: "pointer" }} onClick={(event, noticia) => toggleNoticiaContent(event, noticia.id)}>
-                            {noticia.titulo}
+                        <div className="mb-1 text-light" style={{ cursor: "pointer" }} onClick={(event, noticia) => toggleNoticiaContent(event, noticia.id)}
+                             dangerouslySetInnerHTML={{ __html: noticia.titulo }}>
                         </div>
 
                         <small className="text-light">
@@ -144,8 +144,7 @@ async function buscarNoticias(event) {
                                 <div
                                     className="mb-1 text-light"
                                     onClick={(event) => toggleNoticiaContent(event, noticia.id)}
-                                >
-                                    {noticia.titulo}
+                                    dangerouslySetInnerHTML={{ __html: noticia.titulo }}>
                                 </div>
 
                                 <small className="text-light">

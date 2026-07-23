@@ -11,7 +11,15 @@ function NoticiasCards() {
     }
     useEffect(() => {
         async function carregar() {
-            const response = await fetch(`${API_URL}/api/noticias/obter.php`);
+            const response = await fetch(`${API_URL}/api/noticias/obter.php`,
+                {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ page: 1, limit: 10 })
+                }
+            );
             const dados = await response.json();
             setNoticias(dados.results);
         }
@@ -24,7 +32,7 @@ function NoticiasCards() {
     return (noticias.map((noticia, index) => (
         <div className="card" key={noticia.id} onClick={irParaNoticia} data-noticia-id={noticia.id}>
             <div className="img" style={{ backgroundImage: `url(${API_URL}/src${noticia.imagem})` }}></div>
-            <strong>{noticia.titulo}</strong>
+            <strong dangerouslySetInnerHTML={{ __html: noticia.titulo }}></strong>
         </div>
     )));
 }
