@@ -9,8 +9,8 @@ const API_URL = process.env.REACT_APP_API_URL;
 function NoticiasRecentes() {
 
     const [noticias, setNoticias] = useState([]);
-
-    const id = Number(window.location.pathname.substring(1))
+    const splittedPathname = window.location.pathname.split('/');
+    const id = Number(splittedPathname[splittedPathname.length-1])
     id && !isNaN(id) ? toggleNoticiaContent(null, id) : toggleNoticiaContent(null, 10);
 
 
@@ -19,10 +19,7 @@ function NoticiasRecentes() {
         buscarNoticias(event);
         $('#page-buttons .btn').click(buscarNoticias);
     });
-
-    function irParaNoticia(event) {
-        window.location.href = `/noticias/${event.target.closest('.card').attributes['data-noticia-id'].value}`
-    }
+    
     useEffect(() => {
         async function carregar() {
             const response = await fetch(`${API_URL}/api/noticias/obter.php`);
