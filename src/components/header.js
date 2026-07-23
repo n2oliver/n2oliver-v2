@@ -1,4 +1,4 @@
-import logo from '../jogos/img/logo.png';
+import logo from '../img/jogos/logo.png';
 function Header() {
     return (
         <header className="mx-auto col-md-12 text-center">

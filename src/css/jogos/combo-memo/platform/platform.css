@@ -1,0 +1,72 @@
+body {
+    margin: 0 auto;
+    width: fit-content;
+}
+.platform {
+    width: 500px;
+    height: 696px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    background-color: transparent;
+    justify-content: center;
+}
+.menu {
+    background-color: darkslategray;
+    color: white;
+    padding: 4px 0;
+    text-align: center;
+    font-family: sans-serif;
+    margin-bottom: 6px;
+    font-size: 14px;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    width: 100vw;
+}
+
+.menu h1 {
+  font-family: 'Ubuntu';
+  color: #FFD43B; /* azul escuro */
+  text-align: center;
+  text-shadow: 2px 2px 0px #243E66; /* sombra amarela simulando contorno */
+  margin: 0 !important;
+}
+
+.menu .botoes {
+    margin-top: 2px;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+.menu h3 {
+    margin: 0;
+}
+.menu button {
+    background-color: #f0ad4e;
+    color: firebrick;
+    border: none;
+    padding: 4px 10px;
+    margin: 0 3px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background-color: #ec971f;
+}
+.mesa {
+    background-image: url("/jogos/combo-memo/components/platform/wood.jpg");
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: repeat-x;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+footer {
+    width: 100vw !important;
+    padding: 0px !important;
+}

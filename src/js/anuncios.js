@@ -42,4 +42,4 @@ function abrirSmartlinkUmaVez() {
   window.open(SMARTLINK_1, '_blank', params1);
   sessionStorage.setItem('smartlink_aberto', '1');
 }
-export { abrirSmartlinkUmaVez };
+export { abrirSmartlinkUmaVez, SMARTLINK_2, params2 };

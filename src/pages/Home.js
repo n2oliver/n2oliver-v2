@@ -1,11 +1,13 @@
 import React from 'react';
 import '../css/home.css';
+import Header from '../components/header.js';
 import NoticiasBar from '../components/noticiasbar.js';
 import DestaqueImagem from '../components/destaque-imagem.js';
 import VerTodasAsNoticias from '../components/ver-todas-as-noticias.js';
 
 function Home() {
     return (<>
+        <Header />
         <main className="w-100 m-auto col-md-12 p-0">
             <DestaqueImagem />
         </main>

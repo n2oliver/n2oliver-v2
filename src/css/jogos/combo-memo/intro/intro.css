@@ -1,0 +1,69 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-image: url(../../../../img/jogos/combo-memo/bg-combo-memo.png);
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.4rem;
+    font-family: 'Ubuntu';
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    background-image: url(../../../../img/jogos/combo-memo/platform/wood.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    margin: 1rem auto;
+    padding: 14px;
+    max-width: 600px;
+    border: 1px solid white;
+}
+
+header img {
+    max-width: 200px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: yellow !important;
+    -webkit-text-stroke: 2px orange;
+    filter: drop-shadow(0 0 .2rem yellow);
+    background-color: darkslategray;
+}
+
+p {
+    font-size: 1.4rem;
+    margin: 1rem auto;
+    max-width: 600px;
+
+    color: yellow !important;
+    -webkit-text-stroke: .7px #000;
+}
+
+#jogar-agora {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #f30012;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    max-width: 600px;
+}
+
+.container {
+    background-color: darkslategrey;
+    width: fit-content;
+    border: 1px solid white;
+    margin-bottom: 20px !important;
+    min-width: 0 !important;
+}

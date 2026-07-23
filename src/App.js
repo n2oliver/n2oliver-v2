@@ -12,7 +12,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { abrirSmartlinkUmaVez } from "./js/anuncios";
 
 import Navbar from './components/navbar.js';
-import Header from './components/header.js';
 import Footer from './components/footer.js';
 
 import Home from "./pages/Home";
@@ -25,12 +24,12 @@ import Cursos from "./pages/Cursos";
 import Desenvolvedor from "./pages/Desenvolvedor";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
+import ComboMemo from "./pages/jogos/ComboMemo.js";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/noticias" element={<Noticias />} />
@@ -42,6 +41,9 @@ function App() {
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/desenvolvedor" element={<Desenvolvedor />} />
         <Route path="/contato" element={<Contato />} />
+
+        <Route path="/jogos/combo-memo" element={<ComboMemo />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -1,0 +1,20 @@
+.platform .card {
+    background-size: contain;
+    margin: 4px;
+    width: 142px;
+    flex: 1 1 100px;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+    border: 0 !important;
+}
+.inverter {
+    animation: inverter .5s ease;
+}
+.platform .sem-fundo {
+    background-image: url(/src/img/jogos/combo-memo/card/card.png) !important;
+}
+@keyframes inverter {
+  0%   { transform: scaleX(1); }
+  50%  { transform: scaleX(0); }
+  100% { transform: translateY(1); }
+}

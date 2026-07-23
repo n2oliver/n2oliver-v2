@@ -1,3 +1,6 @@
+<?php
+  include("/api/load-env.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,6 +28,10 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>n2oliver</title>
+    <script>
+      window.API_URL = <?= getenv('REACT_APP_API_URL'); ?>
+      alert(window.API_URL);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
