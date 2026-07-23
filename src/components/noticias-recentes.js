@@ -164,4 +164,4 @@ async function buscarNoticias(event) {
         );
 }
 export default NoticiasRecentes;
-export { voltar, avancar }
+export { voltar, avancar, toggleNoticiaContent }

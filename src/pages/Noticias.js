@@ -1,7 +1,12 @@
 import React from 'react';
-import NoticiasRecentes, { avancar, voltar } from '../components/noticias-recentes';
+import NoticiasRecentes, { avancar, toggleNoticiaContent, voltar } from '../components/noticias-recentes';
+
 
 function Noticias() {
+    document.addEventListener("DOMContentLoaded",()=>{
+        const id = Number(window.location.pathname.substring(1))
+        id && !isNaN(id) ? toggleNoticiaContent(null, id) : toggleNoticiaContent(null, 10);
+    });
     return (
         <div>
             <h1 className="w-100 text-light px-4 pt-3 pb-4 bg-primary mb-0">

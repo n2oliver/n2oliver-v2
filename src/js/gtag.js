@@ -1,3 +1,4 @@
+window.dataLayer = window.dataLayer || [];
 (function (w, d, s, l, i) {
     w[l] = w[l] || []; w[l].push({
         'gtm.start':
@@ -6,8 +7,7 @@
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
             'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
 })(window, document, 'script', 'dataLayer', 'GTM-TJNPSQS');
-window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
+function gtag() { window.dataLayer.push(arguments); }
 gtag('js', new Date());
 
 gtag('config', 'G-0T82Y59VYL');
