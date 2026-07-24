@@ -25,8 +25,26 @@ import Desenvolvedor from "./pages/Desenvolvedor";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 import ComboMemo from "./pages/jogos/ComboMemo.js";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [config, setConfig] = useState([]);
+
+  useEffect(() => {
+    async function carregar() {
+      const response = await fetch("/api/obter-api.php");
+      const dados = await response.json()
+      setConfig(dados);
+    }
+
+    carregar();
+  }, [])
+  if (!config || config && !config.API_URL) {
+    return;
+  }
+  
+  window.API_URL = config.API_URL;
+
   return (
     <div className="App">
       <Navbar />
@@ -51,12 +69,12 @@ function App() {
   );
 }
 document.addEventListener('DOMContentLoaded', function () {
+  window.onclick = () => {
     window.onclick = () => {
-        window.onclick = () => {
-            abrirSmartlinkUmaVez();
-            window.onclick = null;
-        }
+      abrirSmartlinkUmaVez();
+      window.onclick = null;
     }
+  }
 });
 
 export default App;
